@@ -1,5 +1,8 @@
 package frc.robot;
 
+import com.revrobotics.CANSparkFlex;
+import com.revrobotics.CANSparkLowLevel.MotorType;
+
 import edu.wpi.first.math.controller.PIDController;
 import edu.wpi.first.math.geometry.Translation2d;
 import edu.wpi.first.math.kinematics.SwerveDriveKinematics;
@@ -63,7 +66,7 @@ public final class Constants {
 
         // Can ID's for the swerve turning motors
         public static final int kFrontLeftTurningMotorPort = 7;
-        public static final int kFrontRightTurningMotorPort = 7;
+        public static final int kFrontRightTurningMotorPort = 8;
         public static final int kBackLeftTurningMotorPort = 1;
         public static final int kBackRightTurningMotorPort = 3;
 
@@ -93,10 +96,10 @@ public final class Constants {
 
 
         // Sure: Offset to basically make the drive wheels straight when the encoders read zero
-        public static final double kFrontLeftDriveAbsoluteEncoderOffsetRad = .408;
-        public static final double kFrontRightDriveAbsoluteEncoderOffsetRad = 2.1859;
-        public static final double kBackLeftDriveAbsoluteEncoderOffsetRad = 4.6617744;
-        public static final double kBackRightDriveAbsoluteEncoderOffsetRad = 3.980677145;
+        public static final double kFrontLeftDriveAbsoluteEncoderOffsetRad = .408 + Math.PI; //.408
+        public static final double kFrontRightDriveAbsoluteEncoderOffsetRad = 2.1859; //2.1859
+        public static final double kBackLeftDriveAbsoluteEncoderOffsetRad = 4.6617744;// 4.6617744
+        public static final double kBackRightDriveAbsoluteEncoderOffsetRad = 3.980677145; //3.980677145
 
         // Maybe check:
         // public static final double kPhysicalMaxSpeedMetersPerSecond = 5*(2.0/0.25); // max speed, roughly 0.6 full speed, was 5, changing this didn't change anything it seemed, maybe slowed down the turning motors.
@@ -207,4 +210,7 @@ public final class Constants {
         public static PIDController PIDturn = new PIDController(0.005, 0, 0);
         public static PIDController PIDcharging = new PIDController(0.05, 0, 0);
     }
+
+    public static CANSparkFlex outtake1 = new CANSparkFlex(20, MotorType.kBrushless);
+    public static CANSparkFlex outtake2 = new CANSparkFlex(21, MotorType.kBrushless);
 }

@@ -64,7 +64,7 @@ public class SwerveModule {
     }
 
     public double getTurningPosition() { //returns in radians
-        return Math.PI/180 * absoluteEncoder.getAbsolutePosition().refresh().getValueAsDouble() - absoluteEncoderOffsetRad;
+        return 2 * Math.PI * absoluteEncoder.getAbsolutePosition().refresh().getValueAsDouble() - absoluteEncoderOffsetRad;
         // return turningEncoder.getPosition();
     }
 

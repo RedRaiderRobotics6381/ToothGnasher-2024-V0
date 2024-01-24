@@ -115,19 +115,23 @@ public class SwerveSubsystem extends SubsystemBase {
         // odometer.update(getRotation2d(), frontLeft.getState(), frontRight.getState(), backLeft.getState(),
                 // backRight.getState());
         odometer.update(getRotation2d(), getSwerveModulePositions());
+        
 
         // SmartDashboard.putNumber("Robot Heading", getHeading());
         // SmartDashboard.putString("Robot Location", getPose().getTranslation().toString());
         
-        SmartDashboard.putString("Special Turn Encoder [" + 9 + "] current angle:",""+frontLeft.getTurningPosition());
+        SmartDashboard.putString("Special Turn Encoder [" + 9 + "] current angle:",""+backLeft.getTurningPosition());
 
-        SmartDashboard.putString("Special Turn Encoder [" + 10 + "] current angle:",""+frontRight.getTurningPosition());
+        SmartDashboard.putString("Special Turn Encoder [" + 10 + "] current angle:",""+frontLeft.getTurningPosition());
 
-        SmartDashboard.putString("Special Turn Encoder [" + 12 + "] current angle:",""+backLeft.getTurningPosition());
+        SmartDashboard.putString("Special Turn Encoder [" + 11 + "] current angle:",""+frontRight.getTurningPosition());
 
-        SmartDashboard.putString("Special Turn Encoder [" + 11 + "] current angle:",""+backRight.getTurningPosition());
+        SmartDashboard.putString("Special Turn Encoder [" + 12 + "] current angle:",""+backRight.getTurningPosition());
 
         SmartDashboard.putString("Wheel [frontLeft] ", " " + frontLeft.getDriveMotorVelocity());
+
+        SmartDashboard.putString("NavX Angle", " " + gyro.getAngle());
+    
 
         // SmartDashboard.putString("Gyro Roll:", "" + gyro.getRoll());
         // SmartDashboard.putString("Gyro Pitch:", "" + gyro.getPitch());

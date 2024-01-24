@@ -118,6 +118,8 @@ public class Robot extends TimedRobot {
     @Override
     public void teleopPeriodic() {
 
+        Constants.outtake1.set(RobotContainer.secondaryJoystick.getRawAxis(3)*0.2);
+        Constants.outtake2.set(RobotContainer.secondaryJoystick.getRawAxis(3)*-0.2);
     }
 
     @Override
