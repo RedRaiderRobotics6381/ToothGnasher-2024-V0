@@ -69,6 +69,12 @@ public final class Constants {
         public static final int kFrontRightTurningMotorPort = 8;
         public static final int kBackLeftTurningMotorPort = 1;
         public static final int kBackRightTurningMotorPort = 3;
+        
+        //Can ID's for the swerve encoders
+        public static final int kFrontLeftDriveAbsoluteEncoderPort = 10; // Sure
+        public static final int kFrontRightDriveAbsoluteEncoderPort = 11; // Sure
+        public static final int kBackLeftDriveAbsoluteEncoderPort = 9; // Sure
+        public static final int kBackRightDriveAbsoluteEncoderPort = 12; // Sure
 
         // Determines direction of the swerve turning motors
         public static final boolean kFrontLeftTurningEncoderReversed = true;
@@ -81,12 +87,6 @@ public final class Constants {
         public static final boolean kBackLeftDriveEncoderReversed = true;
         public static final boolean kFrontRightDriveEncoderReversed = false;
         public static final boolean kBackRightDriveEncoderReversed = false;
-
-        //Can ID's for the swerve encoders
-        public static final int kFrontLeftDriveAbsoluteEncoderPort = 10; // Sure
-        public static final int kFrontRightDriveAbsoluteEncoderPort = 11; // Sure
-        public static final int kBackLeftDriveAbsoluteEncoderPort = 9; // Sure
-        public static final int kBackRightDriveAbsoluteEncoderPort = 12; // Sure
 
         // Almost Sure: Determines the direction of sensing for the swerve encoders
         public static final boolean kFrontLeftDriveAbsoluteEncoderReversed = false;

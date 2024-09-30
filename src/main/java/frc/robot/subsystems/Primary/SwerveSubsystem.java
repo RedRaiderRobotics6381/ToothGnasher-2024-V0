@@ -149,7 +149,7 @@ public class SwerveSubsystem extends SubsystemBase {
     }
 
     public void setModuleStates(SwerveModuleState[] desiredStates) {
-        System.out.println(DriveConstants.kPhysicalMaxSpeedMetersPerSecond);
+        //System.out.println(DriveConstants.kPhysicalMaxSpeedMetersPerSecond);
         SwerveDriveKinematics.desaturateWheelSpeeds(desiredStates, DriveConstants.kPhysicalMaxSpeedMetersPerSecond);
         // SmartDashboard.putNumber("Max Speed: ", DriveConstants.kPhysicalMaxSpeedMetersPerSecond);
 

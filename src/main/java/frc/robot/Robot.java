@@ -4,6 +4,7 @@
 
 package frc.robot;
 import edu.wpi.first.cscore.UsbCamera;
+import edu.wpi.first.wpilibj.DigitalInput;
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.CommandScheduler;
@@ -23,6 +24,7 @@ public class Robot extends TimedRobot {
     private Command m_autonomousCommand;
 
     private RobotContainer m_robotContainer;
+    DigitalInput aSensor = new DigitalInput(0);
 
     UsbCamera camera1;
     double targetPos = 150;
@@ -39,6 +41,7 @@ public class Robot extends TimedRobot {
 
         NetworkTableInstance.getDefault().getTable("limelight").getEntry("ledMode").setNumber(1);
         m_robotContainer = new RobotContainer();
+        
     }
       
 
@@ -64,6 +67,9 @@ public class Robot extends TimedRobot {
         // robot's periodic
         // block in order for anything in the Command-based framework to work.
         CommandScheduler.getInstance().run();
+        boolean aSensorState = aSensor.get();
+        System.out.println(aSensorState);
+        
     }
 
     /** This function is called once each time the robot enters Disabled mode. */
